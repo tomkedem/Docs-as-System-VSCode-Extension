@@ -1,0 +1,61 @@
+{
+  "name": "docs-as-system",
+  "displayName": "Docs-as-System-he Starter Kit (AI Agent Development Scaffolder)",
+  "publisher": "TomerKedem",
+  "description": "Create fully structured Docs-as-System projects with integrated AI Agent workflows, templates, and operational policies. All generated documentation and project templates are written in Hebrew to support teams working natively in the language.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.106.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "keywords": [
+    "docs-as-system",
+    "documentation",
+    "ai agent",
+    "agent",
+    "ai development",
+    "template",
+    "project-generator"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "docsAsSystem.initProject",
+        "title": "Create New Docs-as-System Project",
+        "category": "Docs-as-System"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomkedem/docs-as-system-vscode-extension.git"
+  },
+  "homepage": "https://tomkedem.github.io/Docs-as-System",
+  "bugs": {
+    "url": "https://github.com/tomkedem/docs-as-system-vscode-extension/issues"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.19.1",
+    "@types/vscode": "^1.106.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3"
+  }
+}
