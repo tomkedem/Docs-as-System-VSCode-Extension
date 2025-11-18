@@ -6,7 +6,7 @@ It reflects the development and added features of the extension.
 
 ---
 
-## Version 0.1.2 (Current)
+## Version 0.1.3 (Current)
 • Initial creation of the VS Code extension  
 • Command registration: "Docs-as-System: Create New Docs-as-System Project"  
 • Integrated project creation logic directly in the extension (no external CLI required)  
