@@ -2,7 +2,7 @@
 
 An extension that generates a complete Docs-as-System project for you, including templates, configuration files and Git scripts, directly from within VS Code.
 
-![Demo](images/demo.gif)
+![Demo](images/demo_en.gif)
 
 ## What does it do?
 
