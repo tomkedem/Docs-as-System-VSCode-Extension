@@ -1,24 +1,21 @@
-<div dir="rtl" style="text-align: right;">
 
-# יומן שינויים של Docs-as-System VS Code Extension
+# Docs-as-System VS Code Extension Changelog
 
-קובץ זה מתעד את השינויים שבוצעו בהרחבת VS Code.  
-הוא משקף את ההתפתחות של ההרחבה והפיצ'רים המוספים אליה.
-
----
-
-## גרסה 0.0.1 (נוכחית)
-• יצירת הרחבת VS Code ראשונית  
-• רישום פקודה: "Docs-as-System: Create New Docs-as-System Project"  
-• שילוב לוגיקת יצירת פרויקט ישירות בהרחבה (ללא תלות ב-CLI חיצוני)  
-• הורדת תבניות אוטומטית מ-GitHub repository  
-• יצירת מבנה פרויקט מלא עם docs/, src/, automation/git/  
-• תמיכה בקבצי תצורה: .gitignore, .editorconfig, .gitattributes  
-• הוספת CHANGELOG.md אוטומטי לכל פרויקט חדש  
-• תמיכה בתצוגת קלט בעברית ב-VS Code
+This file documents the changes made to the VS Code extension.
+It reflects the development and added features of the extension.
 
 ---
 
-© 2025 תומר קדם. הרחבת VS Code רשמית עבור Docs-as-System.
+## Version 0.1.2 (Current)
+• Initial creation of the VS Code extension  
+• Command registration: "Docs-as-System: Create New Docs-as-System Project"  
+• Integrated project creation logic directly in the extension (no external CLI required)  
+• Automatic template download from GitHub repository  
+• Full project structure creation with docs/, src/, automation/git/  
+• Support for configuration files: .gitignore, .editorconfig, .gitattributes  
+• Automatic addition of CHANGELOG.md to every new project  
+• Support for Hebrew input display in VS Code
 
-</div>
+---
+
+© 2025 Tomer Kedem. Official VS Code extension for Docs-as-System.

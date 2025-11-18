@@ -41,6 +41,12 @@ MAJOR.MINOR.PATCH
 מיועד לשינויים משמעותיים או שבירת תאימות לאחור.
 
 ---
+```
+npm version patch
+npm run compile   
+vsce package 
+vsce publish 
+```
 
 ## שלבי הפרסום
 
