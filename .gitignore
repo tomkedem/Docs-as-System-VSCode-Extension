@@ -14,8 +14,8 @@ dist/
 *.tsbuildinfo
 
 # Logs
-logs/
-*.log
+# logs/
+# *.log
 
 # OS files
 .DS_Store

@@ -60,10 +60,6 @@ const TEMPLATE_FILES = [
 
   // logs
   {
-    src: "logs/IMPLEMENTATION_LOG_TEMPLATE.md",
-    dest: "docs/logs/IMPLEMENTATION_LOG.md"
-  },
-  {
     src: "logs/IMPLEMENTATION_LOG_BY_CYCLE_TEMPLATE.md",
     dest: "docs/logs/IMPLEMENTATION_LOG_BY_CYCLE.md"
   },
@@ -72,8 +68,8 @@ const TEMPLATE_FILES = [
     dest: "docs/logs/IMPLEMENTATION_LOG_SUMMARY.md"
   },
   {
-    src: "logs/IMPLEMENTATION_LOG_SUMMARY_TEMPLATE.en.md",
-    dest: "docs/logs/IMPLEMENTATION_LOG_SUMMARY.en.md"
+    src: "logs/IMPLEMENTATION_LOG_TEMPLATE.md",
+    dest: "docs/logs/IMPLEMENTATION_LOG.md"
   },
 
   // planning
@@ -154,13 +150,21 @@ async function copyDir(source, target) {
   await fs.promises.mkdir(target, { recursive: true });
   const entries = await fs.promises.readdir(source, { withFileTypes: true });
 
+  if (entries.length === 0) {
+    // Create an empty directory if there are no files inside
+    await fs.promises.mkdir(target, { recursive: true });
+    return;
+  }
   for (const entry of entries) {
     const srcPath = path.join(source, entry.name);
     const destPath = path.join(target, entry.name);
 
     if (entry.isDirectory()) {
+      // Recursively copy subdirectories
+      await fs.promises.mkdir(destPath, { recursive: true });
       await copyDir(srcPath, destPath);
     } else if (entry.isFile()) {
+      // Copy individual files
       await fs.promises.copyFile(srcPath, destPath);
     }
   }
@@ -219,11 +223,11 @@ async function run() {
   console.log("        " + targetDir);
   console.log();
 
-    // Step 1: Basic skeleton from Starter Project
+  // Step 1: Copy the starter project skeleton (includes empty src, docs, and README)
   await copyDir(starterProjectDir, targetDir);
   await fs.promises.mkdir(path.join(targetDir, "src"), { recursive: true });
 
-    // Step 2: Download templates into docs
+  // Step 2: Download all template files from GitHub into the docs folder
   await downloadTemplatesIntoProject(targetDir);
 
   console.log("[Docs-as-System Extension] Done.\n");
